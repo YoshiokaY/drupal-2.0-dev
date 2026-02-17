@@ -1,0 +1,68 @@
+{#
+/**
+ * @file
+ * Theme override to display a single page.
+ */
+#}
+<div class="layout_container">
+  <header class="header" role="banner">
+    <div class="container">
+      {{ page.header }}
+      {% if page.primary_menu %}
+        <nav class="nav_primary" role="navigation" aria-label="{{ 'Main navigation'|t }}">
+          {{ page.primary_menu }}
+        </nav>
+      {% endif %}
+    </div>
+  </header>
+
+  {% if page.breadcrumb %}
+    <div class="breadcrumb_wrapper">
+      <div class="container">
+        {{ page.breadcrumb }}
+      </div>
+    </div>
+  {% endif %}
+
+  {% if page.highlighted %}
+    <div class="highlighted">
+      <div class="container">
+        {{ page.highlighted }}
+      </div>
+    </div>
+  {% endif %}
+
+  <main id="main-content" class="main" role="main">
+    <div class="container">
+      <a id="main-content" tabindex="-1"></a>
+
+      {% if page.help %}
+        <div class="help">
+          {{ page.help }}
+        </div>
+      {% endif %}
+
+      <div class="content_wrapper">
+        {{ page.content }}
+
+        {% if page.sidebar_first %}
+          <aside class="sidebar sidebar--first" role="complementary">
+            {{ page.sidebar_first }}
+          </aside>
+        {% endif %}
+
+        {% if page.sidebar_second %}
+          <aside class="sidebar sidebar--second" role="complementary">
+            {{ page.sidebar_second }}
+          </aside>
+        {% endif %}
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      {{ page.footer }}
+    </div>
+  </footer>
+</div>

@@ -1,0 +1,47 @@
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+.header {
+  background-color: $color-white;
+  border-bottom: 1px solid $color-border;
+  position: sticky;
+  top: 0;
+  z-index: $z-header;
+
+  > .container {
+    @include container;
+
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    min-height: 6rem;
+
+    @include mq() {
+      min-height: 8rem;
+    }
+  }
+}
+
+.nav_primary {
+  ul {
+    display: flex;
+    gap: $spacing-sm;
+
+    @include mq() {
+      gap: $spacing-md;
+    }
+  }
+
+  a {
+    @include focus-visible;
+
+    display: block;
+    font-weight: 500;
+    padding: $spacing-xs;
+    transition: color $transition-base;
+
+    &:hover {
+      color: $color-prime;
+    }
+  }
+}

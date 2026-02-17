@@ -1,0 +1,49 @@
+{
+  "name": "drupal-cms-frontend",
+  "version": "1.0.0",
+  "description": "Frontend development environment for Drupal CMS",
+  "scripts": {
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production",
+    "lint": "npm run lint:scss && npm run lint:ts",
+    "lint:scss": "stylelint 'src/scss/**/*.scss'",
+    "lint:ts": "eslint 'src/ts/**/*.ts'",
+    "lint:fix": "npm run lint:scss -- --fix && npm run lint:ts -- --fix",
+    "format": "prettier --write 'src/**/*.{scss,ts}'",
+    "prepare": "cd .. && husky frontend/.husky"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "css-loader": "^7.0.0",
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "husky": "^9.0.0",
+    "lint-staged": "^15.0.0",
+    "mini-css-extract-plugin": "^2.0.0",
+    "postcss": "^8.0.0",
+    "postcss-loader": "^8.0.0",
+    "postcss-preset-env": "^10.0.0",
+    "prettier": "^3.0.0",
+    "sass": "^1.70.0",
+    "sass-loader": "^16.0.0",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard-scss": "^14.0.0",
+    "stylelint-order": "^6.0.0",
+    "ts-loader": "^9.0.0",
+    "typescript": "^5.0.0",
+    "webpack": "^5.90.0",
+    "webpack-cli": "^5.0.0"
+  },
+  "lint-staged": {
+    "src/**/*.scss": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "src/**/*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}

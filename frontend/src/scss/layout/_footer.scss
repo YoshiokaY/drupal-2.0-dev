@@ -1,0 +1,25 @@
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+.footer {
+  background-color: $color-second;
+  color: $color-white;
+  margin-top: auto;
+  padding: $spacing-lg 0;
+
+  @include mq() {
+    padding: $spacing-xl 0;
+  }
+
+  > .container {
+    @include container;
+  }
+
+  a {
+    @include focus-visible;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

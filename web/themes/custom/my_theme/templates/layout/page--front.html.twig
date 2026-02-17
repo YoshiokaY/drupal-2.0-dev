@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Theme override for the front page.
+ */
+#}
+<div class="layout_container layout_container--front">
+  <header class="header" role="banner">
+    <div class="container">
+      {{ page.header }}
+      {% if page.primary_menu %}
+        <nav class="nav_primary" role="navigation" aria-label="{{ 'Main navigation'|t }}">
+          {{ page.primary_menu }}
+        </nav>
+      {% endif %}
+    </div>
+  </header>
+
+  {% if page.highlighted %}
+    <section class="hero_section">
+      {{ page.highlighted }}
+    </section>
+  {% endif %}
+
+  <main id="main-content" class="main main--front" role="main">
+    <a id="main-content" tabindex="-1"></a>
+
+    {% if page.help %}
+      <div class="help">
+        <div class="container">
+          {{ page.help }}
+        </div>
+      </div>
+    {% endif %}
+
+    {{ page.content }}
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      {{ page.footer }}
+    </div>
+  </footer>
+</div>

@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss"
+  ],
+  "plugins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "selector-class-pattern": null,
+    "scss/at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": ["include", "mixin", "if", "else", "each", "for", "use", "forward"]
+      }
+    ],
+    "order/properties-alphabetical-order": true,
+    "no-descending-specificity": null
+  }
+}
