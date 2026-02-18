@@ -8,6 +8,21 @@ DDEV を使用して、ローカル環境で Drupal CMS 2.0 を体験できま�
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 - [DDEV](https://ddev.com/get-started/) v1.24 以上
 
+### macOS でのセットアップ
+
+```bash
+# Docker Desktop をインストール（未インストールの場合）
+brew install --cask docker
+
+# Docker Desktop を起動して初期設定を完了させる
+
+# DDEV をインストール
+brew install ddev/ddev/ddev
+
+# インストール確認
+ddev version
+```
+
 ## クイックスタート
 
 ```bash
