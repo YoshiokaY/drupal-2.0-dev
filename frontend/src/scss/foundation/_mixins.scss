@@ -1,0 +1,71 @@
+@use 'variables' as *;
+
+// Media Query (Mobile First)
+@mixin mq($breakpoint: pc) {
+  @if $breakpoint == pc {
+    @media (min-width: #{$breakpoint}) {
+      @content;
+    }
+  } @else if $breakpoint == sp {
+    @media (max-width: #{$breakpoint - 1}) {
+      @content;
+    }
+  }
+}
+
+// Font size responsive
+@mixin font-size($size-map) {
+  font-size: map-get($size-map, sp);
+
+  @include mq() {
+    font-size: map-get($size-map, pc);
+  }
+}
+
+// Focus visible
+@mixin focus-visible {
+  &:focus-visible {
+    outline: 2px solid $color-prime;
+    outline-offset: 2px;
+  }
+}
+
+// Visually hidden (for screen readers)
+@mixin visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+// Container
+@mixin container {
+  margin-inline: auto;
+  max-width: $container-size;
+  padding-inline: $container-padding;
+  width: 100%;
+}
+
+// Flex center
+@mixin flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+// Truncate text
+@mixin truncate($lines: 1) {
+  @if $lines == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    overflow: hidden;
+  }
+}

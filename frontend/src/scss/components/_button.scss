@@ -1,0 +1,57 @@
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+.btn {
+  @include focus-visible;
+
+  align-items: center;
+  border-radius: 0.4rem;
+  display: inline-flex;
+  font-weight: 500;
+  gap: $spacing-xs;
+  justify-content: center;
+  padding: 1.2rem 2.4rem;
+  transition:
+    background-color $transition-base,
+    color $transition-base,
+    transform $transition-base;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.btn--primary {
+  background-color: $color-prime;
+  color: $color-white;
+
+  &:hover {
+    background-color: darken($color-prime, 10%);
+    color: $color-white;
+  }
+}
+
+.btn--secondary {
+  background-color: transparent;
+  border: 2px solid $color-prime;
+  color: $color-prime;
+
+  &:hover {
+    background-color: $color-prime;
+    color: $color-white;
+  }
+}
+
+.btn--large {
+  font-size: 1.8rem;
+  padding: 1.6rem 3.2rem;
+}
+
+.btn--small {
+  font-size: 1.4rem;
+  padding: 0.8rem 1.6rem;
+}

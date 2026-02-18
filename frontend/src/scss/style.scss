@@ -1,0 +1,19 @@
+/**
+ * My Theme - Main Stylesheet
+ * Entry point for SCSS compilation
+ */
+
+// Foundation
+@use 'foundation/variables' as *;
+@use 'foundation/mixins' as *;
+@use 'foundation/reset';
+@use 'foundation/base';
+
+// Layout
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/container';
+
+// Components
+@use 'components/button';
+@use 'components/card';

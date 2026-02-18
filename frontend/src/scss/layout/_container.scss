@@ -1,0 +1,45 @@
+@use '../foundation/variables' as *;
+@use '../foundation/mixins' as *;
+
+.container {
+  @include container;
+}
+
+.layout_container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  padding: $spacing-lg 0;
+
+  @include mq() {
+    padding: $spacing-xl 0;
+  }
+}
+
+.content_wrapper {
+  display: grid;
+  gap: $spacing-lg;
+
+  @include mq() {
+    gap: $spacing-xl;
+    grid-template-columns: 1fr;
+  }
+}
+
+// With sidebar
+.content_wrapper:has(.sidebar) {
+  @include mq() {
+    grid-template-columns: 1fr 30rem;
+  }
+}
+
+.sidebar {
+  @include mq() {
+    position: sticky;
+    top: 10rem;
+  }
+}

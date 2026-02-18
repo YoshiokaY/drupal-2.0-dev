@@ -1,0 +1,60 @@
+# Dependencies managed by Composer.
+/recipes
+/vendor
+
+# DDEV
+/.ddev/.setup_done
+/.ddev/.gitignore
+/.ddev/.ddev-docker-compose-*
+/.ddev/.homeadditions
+# /.ddev/db_snapshots  # 初期DBを共有するため除外しない
+/.ddev/sequelpro.spf
+/.ddev/import-db
+/.ddev/import.yaml
+/.ddev/providers
+/.ddev/*.example
+
+# Drupal
+/web/sites/*/files
+/web/sites/*/private
+/web/sites/*/settings.local.php
+/web/sites/simpletest
+
+# Frontend
+/frontend/node_modules
+/frontend/dist
+/frontend/.cache
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# Claude
+/.claude/
+/.playwright-mcp/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
